@@ -59,7 +59,7 @@
       </receiver>
     </config-file>
     <source-file src="android/UniversalAnalyticsPlugin.java" target-dir="src/com/danielcwilson/plugins/analytics" />
-    <source-file src="android/CustomBroadcastReciever.java" target-dir="src/com/danielcwilson/plugins/analytics" />
+    <source-file src="android/CustomBroadcastReceiver.java" target-dir="src/com/danielcwilson/plugins/analytics" />
     <source-file src="android/libGoogleAnalyticsServices.jar" target-dir="libs" />
   </platform>
 </plugin>
