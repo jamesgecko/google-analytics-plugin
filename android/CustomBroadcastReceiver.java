@@ -3,6 +3,8 @@ package com.danielcwilson.plugins.analytics;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import com.google.analytics.tracking.android.CampaignTrackingReceiver;
+/*
 import android.util.Log;
 
 import android.net.http.AndroidHttpClient;
@@ -15,7 +17,26 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.ClientProtocolException;
 import java.io.IOException;
+*/
 
+/*
+ *  A simple Broadcast Receiver to receive an INSTALL_REFERRER
+ *  intent and pass it to other receivers, including
+ *  the Google Analytics receiver.
+ */
+public class CustomBroadcastReceiver extends BroadcastReceiver {
+
+  @Override
+  public void onReceive(Context context, Intent intent) {
+
+    // Pass the intent to other receivers.
+
+    // When you're done, pass the intent to the Google Analytics receiver.
+    new CampaignTrackingReceiver().onReceive(context, intent);
+  }
+}
+
+/*
 public class CustomBroadcastReceiver extends BroadcastReceiver {
     private String D_TAG = "Z-BROADCASTRECIEVER";
     @Override
@@ -50,4 +71,4 @@ public class CustomBroadcastReceiver extends BroadcastReceiver {
         }
     }
 }
-
+*/
